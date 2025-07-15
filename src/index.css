@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* :root {
+  @apply font-body
+} */
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f0f0f0
+}
+
+.hoverEffect {
+  @apply transition duration-300 ease-in-out transform;
+}
+
+.border{
+  border: 1px solid red;
+}
+
+.btn {
+  background-color: #9747FF;
+  color: white;
+  padding: 0.3rem 1rem;
+  font-weight: bold;
+}
+
+/* @layer components {
+  .primaryColor {
+  @apply bg:[ #DADADA];
+  }
+  .secondaryColor {
+    @apply bg-[#B7B7B7];
+  }
+} */
