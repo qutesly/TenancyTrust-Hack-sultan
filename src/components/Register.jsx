@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 const Login = () => {
-  const [formData, setFormData] = useState({ email: "", password: "" });
+  const [formData, setFormData] = useState({ firstName: "", lastName: "", email: "", password: "" });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -18,8 +18,10 @@ const Login = () => {
 
     try {
       const response = await axios.post(
-        "https://web-production-f6fa0.up.railway.app/api/login/",
+        "https://web-production-f6fa0.up.railway.app/api/register/",
         {
+          firstName: formData.firstName,
+          lastName: formData.lastName,
           email: formData.email,
           password: formData.password,
         }
@@ -41,7 +43,7 @@ const Login = () => {
   return (
     <div className="w-full flex flex-col">
       <div className="text-center mb-4 mt-8 px-4">
-        <h1 className="text-xl font-semibold">Log In or Sign-Up</h1>
+        <h1 className="text-xl font-semibold">Sign-Up</h1>
       </div>
       <div className="border-t border-t-black/50 w-full h-[1px] mb-4" />
 
@@ -50,6 +52,27 @@ const Login = () => {
         className="space-y-4 flex items-center justify-center px-4"
       >
         <div className="w-[300px] text-center">
+          <div className="flex flex-col  border border-black rounded-lg mb-2">
+            <input
+              type="text"
+              name="text"
+              value={formData.firstName}
+              onChange={handleChange}
+              required
+              placeholder="First Name"
+              className="outline-none p-2 bg-inherit text-[16px] font-normal"
+            />
+            <div className="border-t border-t-black/50 w-full h-[1px]" />
+            <input
+              type="password"
+              name="password"
+              value={formData.lastName}
+              onChange={handleChange}
+              required
+              placeholder="Last name"
+              className="outline-none p-2 bg-inherit"
+            />
+          </div>
           <div className="flex flex-col  border border-black rounded-lg mb-2">
             <input
               type="text"
@@ -73,8 +96,8 @@ const Login = () => {
           </div>
           {error && <p className="text-red-500 text-xs my-2">{error}</p>}
           <div className="flex items-center justify-center gap-2">
-            <p className="text-[12px]">Don't have an account</p>{" "}
-            <Link to={'/sign-up'} className="text-[#9747FF] font-semibold">Sign up</Link>
+            <p className="text-[12px]">Already have an account</p>{" "}
+            <Link to={'/sign-in'} className="text-[#9747FF] font-semibold">Sign in</Link>
           </div>
 
           <button
@@ -82,7 +105,7 @@ const Login = () => {
             disabled={loading}
             className="btn w-full my-4 rounded-lg text-[15px] hover:bg-white hover:text-black hoverEffect"
           >
-            {loading ? "Signin in..." : "Sign in"}
+            {loading ? "Signin up..." : "Sign up"}
           </button>
 
           <div className="flex items-center justify-center gap-2">

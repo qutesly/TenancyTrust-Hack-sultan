@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Modal from "./Modal";
 import HeroModal from "../data";
 import HeroModalComponent from "./HeroModal";
+import { Link } from "react-router-dom";
 
 const HeroImage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -59,9 +60,9 @@ const HeroImage = () => {
         </div>
 
         <div className="flex items-center justify-end">
-          <a href="/sign-in" className="btn rounded-lg font-inter hover:bg-white hover:text-black hoverEffect">
+          <Link to={'/sign-in'} className="btn rounded-lg font-inter hover:bg-white hover:text-black hoverEffect">
             Next
-          </a>
+          </Link>
         </div>
       </Modal>
     </div>

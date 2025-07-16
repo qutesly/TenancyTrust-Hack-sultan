@@ -19,12 +19,12 @@ const Modal = ({
 
   return (
     <div
-      className="fixed inset-0  bg-black/0 z-50 flex items-center justify-center overflow-y-auto h-full"
+      className="fixed inset-0  bg-black/0 z-50 flex items-center justify-center h-full"
       style={style}
       onClick={handleBackdropClick}
     >
       <div
-        className={`bg-white rounded-lg shadow-lg p-6 relative ${className}`}
+        className={`rounded-lg shadow-lg p-6 relative ${className}`}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button (Optional) */}

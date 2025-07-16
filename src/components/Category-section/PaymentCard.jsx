@@ -1,9 +1,9 @@
 import React from "react";
 
-const PaymentCard = () => {
+const PaymentCard = ({ onRegister }) => {
   return (
     <div
-      className="hidden md:flex flex-col items-center justify-center rounded-lg p-6"
+      className="w-full flex flex-col items-center justify-center rounded-lg p-6"
       style={{
         backgroundImage: "url('/payment-image.jpg')",
         backgroundSize: "cover",
@@ -45,8 +45,15 @@ const PaymentCard = () => {
           </div>
         </div>
 
-        <button className="btn rounded-full w-full text-black">Register</button>
-        <p className="text-[10px] text-center">You won't be charged until after inspection</p>
+        <button
+          className="btn rounded-full w-full hover:text-black hover:bg-white"
+          onClick={onRegister}
+        >
+          Register
+        </button>
+        <p className="text-[10px] text-center">
+          You won't be charged until after inspection
+        </p>
       </div>
     </div>
   );

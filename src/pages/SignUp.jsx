@@ -1,18 +1,18 @@
-import React from "react";
-import Header2 from "../components/Header2";
-import SignIn from "../components/SignIn";
+import React from 'react'
+import Register from '../components/Register'
+import Header2 from '../components/Header2'
 
-const SignInSignUp = () => {
+const SignUp = () => {
   return (
-    <>
-      <Header2 />
+     <>
+      {/* <Header2 /> */}
       <div className="min-h-screen flex items-center justify-center font-josefin mx-4 my-4 ">
         <div className="w-full max-w-md flex flex-col items-center justify-center py-4 border border-black rounded-xl">
-          <SignIn />
+          <Register />
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default SignInSignUp;
+export default SignUp

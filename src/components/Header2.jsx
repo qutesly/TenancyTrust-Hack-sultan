@@ -3,6 +3,7 @@ import SearchBar from "./SearchBar";
 import Logo from "./Logo";
 import NavLink from "./Navlink";
 import Modal from "./Modal";
+import { Link } from "react-router-dom";
 
 const Header2 = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -63,33 +64,33 @@ const Header2 = () => {
         >
           <button className="flex items-center gap-2 mb-4 font-josefin">
             <img src="/help-icon.svg" alt="" className="w-4 h-4" />
-            <a href={"/"} className="">
+            <Link to={"/"} className="">
               Help Center
-            </a>
+            </Link>
           </button>
           <button className="flex items-center gap-2 mb-4 font-josefin">
             <img src="/q&a-icon.svg" alt="" className="w-4 h-4" />
-            <a href={"/"} className="">
+            <Link to={"/"} className="">
               Q & A
-            </a>
+            </Link>
           </button>
           <button className="flex items-center gap-2 mb-4 font-josefin">
             <img src="/t&c-icon.svg" alt="" className="w-4 h-4" />
-            <a href={"/"} className="">
+            <Link to={"/"} className="">
               Terms & Conditions
-            </a>
+            </Link>
           </button>
           <button className="flex items-center gap-2 mb-4 font-josefin border-t border-t-gray-500 pt-2">
             <img src="/fi_search.svg" alt="" className="w-4 h-4" />
-            <a href={"/"} className="">
+            <Link to={"/"} className="">
               Find a Landlord
-            </a>
+            </Link>
           </button>
           <button className=" flex items-center gap-2 mb-4 font-josefin border-t border-t-gray-500 pt-2">
             <img src="/sign-icon.svg" alt="" className="w-4 h-4" />
-            <a href={"/"} className="">
+            <Link to={"/sign-in"} className="">
               Sign In / Sign Up
-            </a>
+            </Link>
           </button>
         </Modal>
 
